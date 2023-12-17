@@ -29,3 +29,13 @@ function calc(num1, operator, num2) {
             divide(num1, num2);
     }
 }
+
+const digitBtns = document.querySelectorAll('.digit');
+
+console.log(digitBtns);
+
+digitBtns.forEach(digitBtn => digitBtn.addEventListener('click', test));
+
+function test(){
+    console.log("Hello!");
+}
