@@ -34,8 +34,19 @@ const digitBtns = document.querySelectorAll('.digit');
 
 console.log(digitBtns);
 
-digitBtns.forEach(digitBtn => digitBtn.addEventListener('click', test));
+const btnArray = Array.from(digitBtns);
 
-function test(){
-    console.log("Hello!");
+console.log(btnArray);
+
+for (let i=0; i < btnArray.length; i++){
+    let btnValue = btnArray[i].textContent;
+    btnArray[i].addEventListener("click", test.bind(null, btnValue));
+    
+}
+
+
+// digitBtns.forEach(digitBtn => digitBtn.addEventListener('click', test));
+
+function test(value){
+    console.log(value);
 }
