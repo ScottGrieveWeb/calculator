@@ -51,4 +51,14 @@ for (let i=0; i < btnArray.length; i++){
 
 function test(value){
     console.log(value);
+    calcDisplay.value =+ value;
+    displayContainer.append(calcDisplay);
 }
+
+const calcDisplay = document.querySelector('#display');
+const displayContainer = document.querySelector('.display-container');
+console.log(displayContainer);
+console.log(calcDisplay);
+let firstNum;
+let secondNum;
+let operator;
