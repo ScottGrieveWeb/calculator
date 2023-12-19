@@ -50,8 +50,14 @@ for (let i=0; i < btnArray.length; i++){
 
 
 function test(value){
+
+    if (firstNum === ''){
+        firstNum = value;
+    } else {
+        secondNum = value;
+    }
     console.log(value);
-    calcDisplay.value =+ value;
+    calcDisplay.value = firstNum + operator + secondNum;
     displayContainer.append(calcDisplay);
 }
 
@@ -59,6 +65,9 @@ const calcDisplay = document.querySelector('#display');
 const displayContainer = document.querySelector('.display-container');
 console.log(displayContainer);
 console.log(calcDisplay);
-let firstNum;
-let secondNum;
-let operator;
+let firstNum = '';
+let secondNum = '';
+let operator = '+';
+
+calcDisplay.value = firstNum + operator + secondNum;
+displayContainer.append(calcDisplay);
