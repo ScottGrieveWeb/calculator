@@ -48,7 +48,7 @@ for (let i=0; i < btnArray.length; i++){
 }
 
 
-
+// adds value of bttn pressed to the display
 function display(value){
 
     calcDisplay.value = calcDisplay.value + value;
@@ -59,12 +59,18 @@ const calcDisplay = document.querySelector('#display');
 calcDisplay.value = '';
 const displayContainer = document.querySelector('.display-container');
 
-let firstNum = '';
-let secondNum = '';
-let operator = '+';
 
-// calcDisplay.value = firstNum + operator + secondNum;
-// displayContainer.append(calcDisplay);
 
-// const equalsBttn = document.querySelector('.equal');
+
+const equalsBttn = document.querySelector('.equal');
 // equalsBttn.addEventListener("click", calc.bind(null, firstNum, operator, secondNum));
+
+
+// AC bttn clears calc display
+const clearBttn = document.querySelector('.clear');
+clearBttn.addEventListener("click", clear.bind(null));
+
+function clear() {
+    calcDisplay.value='';
+    displayContainer.append(calcDisplay);
+}
