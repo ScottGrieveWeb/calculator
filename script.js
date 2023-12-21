@@ -19,7 +19,9 @@ function multiply(a, b){
 function calc(num1, operator, num2) {
     switch (operator){
         case '+':
-            add(num1, num2);
+            console.log(num1);
+            console.log(num2);
+            console.log(add(num1, num2));
             break;
         case '-':
             sub(num1, num2);
@@ -35,39 +37,34 @@ function calc(num1, operator, num2) {
 // links up the HTML buttons to JS
 const digitBtns = document.querySelectorAll('.digit');
 
-console.log(digitBtns);
 
 const btnArray = Array.from(digitBtns);
 
-console.log(btnArray);
 
 for (let i=0; i < btnArray.length; i++){
     let btnValue = btnArray[i].textContent;
-    btnArray[i].addEventListener("click", test.bind(null, btnValue));
+    btnArray[i].addEventListener("click", display.bind(null, btnValue));
     
 }
 
 
 
-function test(value){
+function display(value){
 
-    if (firstNum === ''){
-        firstNum = value;
-    } else {
-        secondNum = value;
-    }
-    console.log(value);
-    calcDisplay.value = firstNum + operator + secondNum;
+    calcDisplay.value = calcDisplay.value + value;
     displayContainer.append(calcDisplay);
 }
 
 const calcDisplay = document.querySelector('#display');
+calcDisplay.value = '';
 const displayContainer = document.querySelector('.display-container');
-console.log(displayContainer);
-console.log(calcDisplay);
+
 let firstNum = '';
 let secondNum = '';
 let operator = '+';
 
-calcDisplay.value = firstNum + operator + secondNum;
-displayContainer.append(calcDisplay);
+// calcDisplay.value = firstNum + operator + secondNum;
+// displayContainer.append(calcDisplay);
+
+// const equalsBttn = document.querySelector('.equal');
+// equalsBttn.addEventListener("click", calc.bind(null, firstNum, operator, secondNum));
