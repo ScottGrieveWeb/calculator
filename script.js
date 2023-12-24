@@ -63,7 +63,16 @@ const displayContainer = document.querySelector('.display-container');
 
 
 const equalsBttn = document.querySelector('.equal');
-// equalsBttn.addEventListener("click", calc.bind(null, firstNum, operator, secondNum));
+equalsBttn.addEventListener("click", calcAction.bind(null));
+
+function calcAction(){
+    let s = calcDisplay.value;
+    let total = 0;
+    s = s.replace(/\s/g, '').match(/[+\-]?([0-9\.\s]+)/g) || [];
+    while(s.length) total += parseFloat(s.shift());
+    calcDisplay.value = total;
+    displayContainer.append(calcDisplay);
+}
 
 
 // AC bttn clears calc display
