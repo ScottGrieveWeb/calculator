@@ -68,11 +68,24 @@ equalsBttn.addEventListener("click", calcAction.bind(null));
 function calcAction(){
     let s = calcDisplay.value;
     let total = 0;
-    s = s.replace(/\s/g, '').match(/[+\-]?([0-9\.\s]+)/g) || [];
-    while(s.length) total += parseFloat(s.shift());
-    calcDisplay.value = total;
+
+    let sArray = s.split("");
+    for (let i = 0; i < sArray.length; i++){
+        if (sArray[i] ==='X'){
+            sArray[i] = '*';
+        } else if (sArray[i] === '➗'){
+            sArray[i] = '/';
+        }
+    }
+
+    s = sArray.join('');
+
+    calcDisplay.value = evil(s);
     displayContainer.append(calcDisplay);
 }
+function evil(fn) {
+    return new Function('return ' + fn)();
+  }
 
 
 // AC bttn clears calc display
