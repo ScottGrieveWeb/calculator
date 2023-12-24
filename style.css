@@ -1,4 +1,57 @@
 body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c3327;
     font-family: 'Roboto', sans-serif;
+    padding: 5px 100px;
 }
 
+button {
+    padding: 0;
+    border: none;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+}
+
+button {
+    background-color: #c7ddd1;
+    font-size: 40px;
+    color: #181F1C;
+    padding: 10px 10px;
+    margin: 10px;
+    border-radius: 5px;
+    height: 80px;
+    width: 80px;
+}
+
+#display{
+    background-color: #c7ddd1;
+    font-size: 50px;
+    color: #181F1C;
+    padding: 20px 20px;
+    margin: 15px;
+    border-radius: 5px;
+    width: 350px;
+}
+
+.calc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 800px;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-shrink: inherit;
+}
